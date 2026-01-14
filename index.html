@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cijfer Assistent - Snel Toetscijfers Berekenen</title>
-    <meta name="description" content="De handigste online tool voor docenten om toetspunten om te zetten naar een cijfer (1-10 schaal). Genereer direct een overzichtelijke omrekentabel.">
+    <title>Cijfer Assistent - De Omrekentool voor Docenten</title>
+    <meta name="description" content="Genereer direct een lineaire cijfer-omrekentabel voor toetsen. Snel, nauwkeurig en print-vriendelijk. Dé tool voor iedere docent.">
     
-    <!-- OpenGraph / Facebook -->
+    <!-- OpenGraph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cijfer Assistent - Voor Docenten">
-    <meta property="og:description" content="Genereer direct een lineaire omrekentabel voor je toetsen. Snel, simpel en nauwkeurig.">
+    <meta property="og:description" content="Zet toetspunten direct om naar cijfers op een schaal van 1 tot 10.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=1000">
 
     <!-- Favicon -->
@@ -18,10 +17,12 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            -webkit-print-color-adjust: exact;
         }
         @media print {
             .no-print {
@@ -39,19 +40,19 @@
                 margin: 0 !important;
                 padding: 0 !important;
             }
-            .grid {
-                display: table !important;
-                width: 100% !important;
+            .grade-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 8px !important;
             }
-            .grid > div {
-                display: inline-block !important;
-                width: 16% !important;
+            .grade-card {
                 border: 1px solid #e2e8f0 !important;
-                margin: 2px !important;
+                break-inside: avoid;
             }
         }
     </style>
-<script type="importmap">
+
+    <script type="importmap">
 {
   "imports": {
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
