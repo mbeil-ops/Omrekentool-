@@ -1,12 +1,4 @@
-
-export interface StudentResult {
-  id: string;
-  name: string;
+export interface TableRow {
   points: number;
   grade: string;
-}
-
-export interface ParseResult {
-  name: string;
-  score: number;
 }
